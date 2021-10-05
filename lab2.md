@@ -51,3 +51,75 @@ void loop()
   	delay(1000);  
 }
 ````
+
+## B3 實作2-3, 讓你的RGB LED燈全彩模組也可會"呼吸", LED顏色變化是否有像"呼吸的效果"和示波器的波形有什麼關連性? (互動3), (2021-09-12)
+![image](https://user-images.githubusercontent.com/89329299/136054194-55f890f3-2ada-4967-8958-f95e93d88d25.png)
+````C
+int brightness = 0;
+int Red = 9;
+int Blue = 11;
+int Green = 10;
+void setup()
+{
+  pinMode(Red, OUTPUT);
+  pinMode(Blue, OUTPUT);  
+  pinMode(Green, OUTPUT);  
+  
+  Serial.begin(9600); 
+}
+void loop()
+{
+  Serial.println("START");
+
+  for (brightness = 0; brightness <= 255; brightness += 5) {
+    analogWrite(Red, brightness);
+    delay(50); 
+  }
+  for (brightness = 255; brightness >= 0; brightness -= 5) {
+    analogWrite(Red, brightness);
+    delay(50); 
+  }
+  delay(1000); 
+  
+
+  for (brightness = 0; brightness <= 255; brightness += 5) {
+    analogWrite(Blue, brightness);
+    delay(50); 
+  }
+  for (brightness = 255; brightness >= 0; brightness -= 5) {
+    analogWrite(Blue, brightness);
+    delay(50); 
+  }  
+  delay(1000); 
+  
+
+  for (brightness = 0; brightness <= 255; brightness += 5) {
+    analogWrite(Green, brightness);
+    delay(50); 
+  }
+  for (brightness = 255; brightness >= 0; brightness -= 5) {
+    analogWrite(Green, brightness);
+    delay(50); 
+  }  
+  delay(1000);   
+  Serial.println("END");  
+}
+````
+
+##實作2-4 analogRead(), 1024解析度 (i.e.,10-bit): 可變電阻 + 序列監視器與輸出; 當你改變可變電阻的阻值(e.g., 10K-ohm)時，序列監視器輸出的數值有什麼改變? 數值又有什麼意義呢? 可試將你的想法寫在你的GitHub Page中喔!
+![image](https://user-images.githubusercontent.com/89329299/136057272-7a768ff5-a2e7-4f6d-8ea5-397dc589e761.png)
+````C
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A0);
+  // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
+  float voltage = sensorValue * (5.0 / 1023.0);
+  // print out the value you read:
+  Serial.println(voltage);
+}
+````
+
