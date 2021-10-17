@@ -93,3 +93,5 @@ void loop() {
   lcd.print(millis() / 100);
 }
 ````
+## Lab 4-4 整合超音波感測器 + LCD: 參考之前的實作, 完成以下任務:
+
