@@ -1,5 +1,5 @@
-#嵌入式系統 - 實作4: 七段顯示器, LCD 顯示器 + 超音波感測器 (W7, W9)
-##Lab 4-1 用七段顯示器來顯示數字"8."
+# 嵌入式系統 - 實作4: 七段顯示器, LCD 顯示器 + 超音波感測器 (W7, W9)
+## Lab 4-1 用七段顯示器來顯示數字"8."
 ![image](https://user-images.githubusercontent.com/89329299/137610615-6c96ecd8-3514-41bf-8a1a-6ec3d829f9eb.png)
 ````C
 void setup()
@@ -67,5 +67,29 @@ seg71(1, 1, 1, 0, 0, 0, 0, 1); // 7
 seg71(1, 1, 1, 1, 1, 1, 1, 1); // 8
 seg71(1, 1, 1, 1, 0, 1, 1, 1); // 9
 seg71(1, 1, 1, 1, 1, 1, 0, 1); // 0
+}
+````
+## Lab 4-3 LCD顯示"Hello" + 你的英文名字 (e.g., "Hello Horace")
+![chrome-capture (1)](https://user-images.githubusercontent.com/89329299/137612075-2e27ba02-587f-4c53-9ff0-976ce5f7175d.gif)
+````C
+// include the library code:
+#include <LiquidCrystal.h>
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+void setup() {
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  lcd.print("hello, BUBU!");
+}
+
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.setCursor(0, 1);
+  // print the number of seconds since reset:
+  lcd.print(millis() / 100);
 }
 ````
