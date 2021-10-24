@@ -38,7 +38,7 @@ void loop()
 }
 ````
 ## Lab 5-2 LCD顯示溫度感應器的溫度;若溫度<38 綠LED亮; 若大於38度, 紅色LED亮, 細節請參考以下Demo
-
+![chrome-capture (2)](https://user-images.githubusercontent.com/89329299/138580337-0df1ea4e-3d0e-42b2-8e2b-466d61b5d92d.gif)
 ````C
 // For Embedded System course, VNU, Fall 2021 
 
