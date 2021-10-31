@@ -58,3 +58,28 @@ void loop(){
   }
 }
 ````
+## Lab 6-2 分享一個你最喜歡的實作 (電路即可)到你的GitHub, 範列如下:
+![chrome-capture (1)](https://user-images.githubusercontent.com/89329299/139566982-18e6dbb5-0bf6-4abd-b6f3-0b8ae94a0734.gif)
+````C
+// include the library code:
+#include <LiquidCrystal.h>
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+void setup() {
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  lcd.print("hello, BUBU!");
+}
+
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.setCursor(0, 1);
+  // print the number of seconds since reset:
+  lcd.print(millis() / 100);
+}
+````
+
