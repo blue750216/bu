@@ -163,3 +163,9 @@ for i, item in enumerate(top_5):
 
 show_image(image, '')
 ````
+# 實作A: Python自動翻譯功能Module測試
+![image](https://user-images.githubusercontent.com/89329299/146679532-fa3fc896-6ffd-4ee4-a6f7-7bc2047caf0b.png)
+# B. 顯示Tiger照片的前五大最可能的結果 (含中英文對照)
+![image](https://user-images.githubusercontent.com/89329299/146679638-79dd16ce-c500-474e-a241-97ae933d70b7.png)
+
+
